@@ -28,8 +28,10 @@ before(async () => {
 
 it("solves the challenge", async function () {
 
-  let exploiterFactory = await ethers.getContractFactory('jpegSniperExploiter')
-  let exploiter = await exploiterFactory.connect(attacker).deploy(flatLaunchpeg.address,await attacker.getAddress())
+  let exploiterFactory = await ethers.getContractFactory('JpegSniperExploiter')
+  let exploiter = await exploiterFactory.connect(attacker).deploy(flatLaunchpeg.address, await attacker.getAddress(), {
+    value: 69
+  })
 
 });
 
